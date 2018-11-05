@@ -9,6 +9,11 @@ public class Periodical {
     private String name;
     private BigDecimal monthlyPrice;
 
+    public Periodical() {
+    }
+
+
+
     public int getId() {
         return id;
     }
@@ -45,23 +50,29 @@ public class Periodical {
 
         private Periodical instance = new Periodical();
 
-        private Builder setId(int id){
-            instance.id=id;
-            return this;
-        }private Builder setIssueIndex(int issueIndex){
-            instance.issueIndex=issueIndex;
-            return this;
-        }private Builder setName(String name){
-            instance.name=name;
-            return this;
-        }private Builder setMonthlyPrice(BigDecimal monthlyPrice){
-            instance.monthlyPrice=monthlyPrice;
+        private Builder setId(int id) {
+            instance.id = id;
             return this;
         }
+
+        private Builder setIssueIndex(int issueIndex) {
+            instance.issueIndex = issueIndex;
+            return this;
+        }
+
+        private Builder setName(String name) {
+            instance.name = name;
+            return this;
+        }
+
+        private Builder setMonthlyPrice(BigDecimal monthlyPrice) {
+            instance.monthlyPrice = monthlyPrice;
+            return this;
+        }
+
         public Periodical build() {
             return instance;
         }
-
 
 
     }

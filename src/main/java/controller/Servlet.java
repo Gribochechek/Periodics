@@ -1,6 +1,7 @@
 package controller;
 
-import model.Pages;
+import controller.command.Command;
+import controller.command.CommandUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,12 +20,12 @@ public class Servlet extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Command command = CommandUtil.getInstance().getCommand(request);
+        String page = Pages.INDEX;
+        page = command.execute(request);
+
+        request.getRequestDispatcher(page).forward(request, response);
 
 
-        request.getRequestDispatcher(Pages.INDEX).forward(request, response);
-
-
-
-
-}
+    }
 }

@@ -1,6 +1,6 @@
 package model.entity;
 
-public class Subscription {
+public class SubscriptionType {
 
     private int id;
     private String name;
@@ -32,7 +32,7 @@ public class Subscription {
 
     public static class Builder {
 
-        private Subscription instance = new Subscription();
+        private SubscriptionType instance = new SubscriptionType();
 
         private Builder setId(int id) {
             instance.id = id;
@@ -49,7 +49,7 @@ public class Subscription {
             return this;
         }
 
-        public Subscription build() {
+        public SubscriptionType build() {
             return instance;
         }
     }
