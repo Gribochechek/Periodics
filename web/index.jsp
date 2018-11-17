@@ -23,12 +23,33 @@
 
 Hello! <br>
 
-<c:if test="${ not empty requestScope.result}">
-    <c:out value="${requestScope.result}"/>
+<c:if test="${ not empty sessionScope.result}">
+    <c:out value="${sessionScope.result}"/>
+</c:if>
+<br>
+<c:if test="${not empty sessionScope.user}">
+    <c:out value="${sessionScope.user.email}"/>
+    <c:out value="${sessionScope.user.password}"/>
 </c:if>
 
 
-<br> <a  href="login.jsp" style="float: left"> Login </a>
+<c:choose>
+    <c:when test="${not empty sessionScope.user}">
+        <br><form class="form-inline " action="${pageContext.request.contextPath}/servlet" method="post">
+            <input type="hidden" name="command" value="logOut">
+            <button class="btn btn-sm btn-primary btn-outline-dark" type="submit"><fmt:message key="logout"/></button>
+        </form>
+    </c:when>
+    <c:otherwise>
+        <br> <a  href="login.jsp" style="float: left"> Login </a><br>
+    </c:otherwise>
+
+</c:choose>
+
+<c:if test="${not empty requestScope.userloggedOut}">
+    <br><c:out value="userloggedOut"/>
+</c:if>
+
 
 
 </body>

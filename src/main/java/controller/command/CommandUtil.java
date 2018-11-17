@@ -27,6 +27,7 @@ public class CommandUtil {
     private void init() {
         commandMap.put(CommandConstants.DEFAULT_COMMAND, new DefaultCommand());
         commandMap.put(CommandConstants.LOGIN_COMMAND, new LoginCommand());
+        commandMap.put(CommandConstants.LOGOUT_COMMAND, new LogOutCommand());
     }
 
 

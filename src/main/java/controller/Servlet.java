@@ -21,7 +21,9 @@ public class Servlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Command command = CommandUtil.getInstance().getCommand(request);
-        String page = Pages.INDEX;
+        String page;
+
+
         page = command.execute(request);
 
         request.getRequestDispatcher(page).forward(request, response);

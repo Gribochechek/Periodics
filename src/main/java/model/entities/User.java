@@ -1,4 +1,4 @@
-package model.entity;
+package model.entities;
 
 import java.math.BigDecimal;
 
@@ -72,37 +72,37 @@ public class User {
 
         private User instance = new User();
 
-        private Builder setId(int id) {
+        public Builder setId(int id) {
             instance.user_id = id;
             return this;
         }
 
-        private Builder setFirstName(String firstName) {
+        public Builder setFirstName(String firstName) {
             instance.firstName = firstName;
             return this;
         }
 
-        private Builder setLastName(String lastName) {
+        public Builder setLastName(String lastName) {
             instance.lastName = lastName;
             return this;
         }
 
-        private Builder setEmail(String email) {
+        public Builder setEmail(String email) {
             instance.email = email;
             return this;
         }
 
-        private Builder setPassword(String password) {
+        public Builder setPassword(String password) {
             instance.password = password;
             return this;
         }
 
-        private Builder setMoney(BigDecimal money) {
+        public Builder setMoney(BigDecimal money) {
             instance.money = money;
             return this;
         }
 
-        private Builder setRole(Role role) {
+        public Builder setRole(Role role) {
             instance.role = role;
             return this;
         }
